@@ -1,5 +1,5 @@
 indexSuccess:
-  stylesheets: [jobs.css]
+  stylesheets: [https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css]
  
 showSuccess:
-  stylesheets: [job.css]
+  stylesheets: [https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css]
