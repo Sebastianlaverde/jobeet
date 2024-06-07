@@ -1,7 +1,10 @@
+<?php use_stylesheet('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') ?>
+
 <h1>Jobeet jobs List</h1>
 
-<table>
-  <thead>
+<table class="table table-hover table-striped">
+  
+  <thead class="thead-dark">
     <tr>
       <th>Id</th>
       <th>Category</th>
@@ -23,6 +26,7 @@
     </tr>
   </thead>
   <tbody>
+    
     <?php foreach ($jobeet_jobs as $jobeet_job): ?>
     <tr>
       <td><a href="<?php echo url_for('job/show?id='.$jobeet_job->getId()) ?>"><?php echo $jobeet_job->getId() ?></a></td>

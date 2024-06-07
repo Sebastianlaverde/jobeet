@@ -17,6 +17,13 @@ class jobActions extends sfActions
       ->execute();
   }
 
+  public function executeFooBar(sfWebRequest $request)
+{
+  $this->foo = 'bar';
+  $this->bar = array('bar', 'baz');
+}
+
+
   public function executeShow(sfWebRequest $request)
   {
     $this->jobeet_job = Doctrine_Core::getTable('JobeetJob')->find(array($request->getParameter('id')));
