@@ -5,6 +5,13 @@
 <?php if (!$form->getObject()->isNew()): ?>
 <input type="hidden" name="sf_method" value="put" />
 <?php endif; ?>
+
+<?php echo link_to(
+  'Delete',
+  'job/delete?id='.$form->getObject()->getId(),
+  array('method' => 'delete', 'confirm' => 'Are you sure?')
+) ?>
+
   <table>
     <tfoot>
       <tr>

@@ -129,6 +129,10 @@ abstract class BaseJobeetJob extends sfDoctrineRecord
              'type' => 'timestamp',
              'notnull' => true,
              ));
+          $this->hasColumn('created_at', 'timestamp', null, array(
+             'type' => 'timestamp',
+             'notnull' => true,
+             ));
     }
 
     public function setUp()
