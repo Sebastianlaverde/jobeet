@@ -2,7 +2,7 @@
 
 require_once dirname(__FILE__).'/../bootstrap/unit.php';
  
-$t = new lime_test(9);
+$t = new lime_test(8);
  
 $t->comment('::slugify()');
 
