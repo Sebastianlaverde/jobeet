@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * BaseJobeetAffiliate
  * 
@@ -32,11 +31,6 @@
  * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-
- use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-
 abstract class BaseJobeetAffiliate extends sfDoctrineRecord
 {
     public function setTableDefinition()

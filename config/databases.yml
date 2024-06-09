@@ -1,7 +1,17 @@
+dev:
+  doctrine:
+    class: sfDoctrineDatabase
 all:
   doctrine:
     class: sfDoctrineDatabase
     param:
       dsn: 'mysql:host=localhost;dbname=jobeet'
+      username: root
+      password: null
+test:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=jobeet_test'
       username: root
       password: null
