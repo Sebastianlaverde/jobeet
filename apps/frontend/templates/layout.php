@@ -21,7 +21,7 @@
         </a></h1>
         <a class="navbar-brand" style="font-weight: 600;">Ask for a job</a>
         <div>
-          <a href="<?php echo url_for('job/index') ?>" class="btn btn-primary">Post a Job</a>
+          <a href="<?php echo url_for('@job_new') ?>" class="btn btn-primary">Post a Job</a>
         </div>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >

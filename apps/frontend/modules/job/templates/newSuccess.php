@@ -1,3 +1,5 @@
-<h1>New Jobeet job</h1>
+<?php use_stylesheet('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') ?>
+
+<h1>Post a job</h1>
 
 <?php include_partial('form', array('form' => $form)) ?>

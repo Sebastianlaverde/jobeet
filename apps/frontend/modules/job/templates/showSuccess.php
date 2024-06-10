@@ -17,8 +17,8 @@
   <?php if ($jobeet_job->getLogo()): ?>
     <div class="logo">
       <a href="<?php echo $jobeet_job->getUrl() ?>">
-        <img src="/uploads/jobs/<?php echo $jobeet_job->getLogo() ?>"
-          alt="<?php echo $jobeet_job->getCompany() ?> logo" />
+        <img src="/uploads/assets/jobs/<?php echo $job->getLogo() ?>"
+          alt="<?php echo $job->getCompany() ?> logo" />
       </a>
     </div>
   <?php endif; ?>
@@ -36,7 +36,7 @@
   </div>
  
   <div style="padding: 110px 0">
-    <a href="<?php echo url_for('job/edit?id='.$jobeet_job->getId()) ?>">
+    <a href=="<?php echo url_for('job_edit', $job) ?>">
       Edit
     </a>
     <a href="<?php echo url_for('job/index') ?>">List</a>
