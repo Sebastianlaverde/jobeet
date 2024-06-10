@@ -29,10 +29,10 @@ class jobActions extends sfActions
 
   public function executeNew(sfWebRequest $request)
 {
-  $job = new JobeetJob();
-  $job->setType('full-time');
+  $jobeet_job = new JobeetJob();
+  $jobeet_job->setType('full-time');
  
-  $this->form = new JobeetJobForm($job);
+  $this->form = new JobeetJobForm($jobeet_job);
 }
  
 public function executeCreate(sfWebRequest $request)
@@ -58,8 +58,8 @@ public function executeDelete(sfWebRequest $request)
 {
   $request->checkCSRFProtection();
  
-  $job = $this->getRoute()->getObject();
-  $job->delete();
+  $jobeet_job = $this->getRoute()->getObject();
+  $jobeet_job->delete();
  
   $this->redirect('job/index');
 }
@@ -73,9 +73,21 @@ protected function processForm(sfWebRequest $request, sfForm $form)
  
   if ($form->isValid())
   {
-    $job = $form->save();
+    $jobeet_job = $form->save();
  
-    $this->redirect($this->generateUrl('job_show', $job));
+    $this->redirect($this->generateUrl('job_show', $jobeet_job));
   }
 }
+
+  public function executePublish(sfWebRequest $request)
+  {
+    $request->checkCSRFProtection();
+  
+    $jobeet_job = $this->getRoute()->getObject();
+    $jobeet_job->publish();
+  
+    $this->getUser()->setFlash('notice', sprintf('Your job is now online for %s days.', sfConfig::get('app_active_days')));
+  
+    $this->redirect($this->generateUrl('job_show_user', $jobeet_job));
+  }
 }
