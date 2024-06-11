@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2024 a las 06:10:03
+-- Tiempo de generación: 11-06-2024 a las 14:06:23
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 7.4.33
 
@@ -47,18 +47,19 @@ CREATE TABLE `jobeet_category` (
   `id` bigint(20) NOT NULL,
   `name` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
+  `updated_at` datetime NOT NULL,
+  `slug` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `jobeet_category`
 --
 
-INSERT INTO `jobeet_category` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Design', '2024-06-05 03:24:59', '2024-06-05 03:24:59'),
-(2, 'Programming', '2024-06-05 03:24:59', '2024-06-05 03:24:59'),
-(3, 'Manager', '2024-06-05 03:24:59', '2024-06-05 03:24:59'),
-(4, 'Administrator', '2024-06-05 03:24:59', '2024-06-05 03:24:59');
+INSERT INTO `jobeet_category` (`id`, `name`, `created_at`, `updated_at`, `slug`) VALUES
+(1, 'Design', '2024-06-08 23:19:21', '2024-06-08 23:19:21', 'design'),
+(2, 'Programming', '2024-06-08 23:19:21', '2024-06-08 23:19:21', 'programming'),
+(3, 'Manager', '2024-06-08 23:19:21', '2024-06-08 23:19:21', 'manager'),
+(4, 'Administrator', '2024-06-08 23:19:21', '2024-06-08 23:19:21', 'administrator');
 
 -- --------------------------------------------------------
 
@@ -102,8 +103,37 @@ CREATE TABLE `jobeet_job` (
 --
 
 INSERT INTO `jobeet_job` (`id`, `category_id`, `type`, `company`, `logo`, `url`, `position`, `location`, `description`, `how_to_apply`, `token`, `is_public`, `is_activated`, `email`, `expires_at`, `created_at`, `updated_at`) VALUES
-(1, 2, 'full-time', 'Sensio Labs', 'sensio-labs.gif', 'http://www.sensiolabs.com/', 'Web Developer', 'Paris, France', 'You\'ve already developed websites with symfony and you want to work\nwith Open-Source technologies. You have a minimum of 3 years\nexperience in web development with PHP or Java and you wish to\nparticipate to development of Web 2.0 sites using the best\nframeworks available.\n', 'Send your resume to fabien.potencier [at] sensio.com\n', 'job_sensio_labs', 1, 1, 'job@example.com', '2008-10-10 00:00:00', '2024-06-05 03:24:59', '2024-06-05 03:24:59'),
-(2, 1, 'part-time', 'Extreme Sensio', 'extreme-sensio.gif', 'http://www.extreme-sensio.com/', 'Web Designer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do\neiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\nenim ad minim veniam, quis nostrud exercitation ullamco laboris\nnisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\nin reprehenderit in.\n\nVoluptate velit esse cillum dolore eu fugiat nulla pariatur.\nExcepteur sint occaecat cupidatat non proident, sunt in culpa\nqui officia deserunt mollit anim id est laborum.\n', 'Send your resume to fabien.potencier [at] sensio.com\n', 'job_extreme_sensio', 1, 1, 'job@example.com', '2008-10-10 00:00:00', '2024-06-05 03:24:59', '2024-06-05 03:24:59');
+(1, 1, NULL, 'Company 100', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_100.sit\n', 'job_100', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(2, 1, NULL, 'Company 101', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_101.sit\n', 'job_101', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(3, 1, NULL, 'Company 102', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_102.sit\n', 'job_102', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(4, 2, NULL, 'Company 103', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_103.sit\n', 'job_103', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(5, 2, NULL, 'Company 104', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_104.sit\n', 'job_104', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(6, 2, NULL, 'Company 105', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_105.sit\n', 'job_105', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(7, 2, NULL, 'Company 106', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_106.sit\n', 'job_106', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(8, 2, NULL, 'Company 107', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_107.sit\n', 'job_107', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(9, 2, NULL, 'Company 108', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_108.sit\n', 'job_108', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(10, 2, NULL, 'Company 109', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_109.sit\n', 'job_109', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(11, 2, NULL, 'Company 110', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_110.sit\n', 'job_110', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(12, 2, NULL, 'Company 111', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_111.sit\n', 'job_111', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(13, 2, NULL, 'Company 112', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_112.sit\n', 'job_112', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(14, 2, NULL, 'Company 113', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_113.sit\n', 'job_113', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(15, 2, NULL, 'Company 114', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_114.sit\n', 'job_114', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(16, 2, NULL, 'Company 115', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_115.sit\n', 'job_115', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(17, 2, NULL, 'Company 116', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_116.sit\n', 'job_116', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(18, 2, NULL, 'Company 117', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_117.sit\n', 'job_117', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(19, 2, NULL, 'Company 118', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_118.sit\n', 'job_118', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(20, 2, NULL, 'Company 119', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_119.sit\n', 'job_119', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(21, 2, NULL, 'Company 120', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_120.sit\n', 'job_120', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(22, 2, NULL, 'Company 121', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_121.sit\n', 'job_121', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(23, 2, NULL, 'Company 122', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_122.sit\n', 'job_122', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(24, 2, NULL, 'Company 123', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_123.sit\n', 'job_123', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(25, 2, NULL, 'Company 124', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_124.sit\n', 'job_124', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(26, 2, NULL, 'Company 125', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_125.sit\n', 'job_125', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(27, 2, NULL, 'Company 126', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_126.sit\n', 'job_126', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(28, 2, NULL, 'Company 127', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_127.sit\n', 'job_127', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(29, 2, NULL, 'Company 128', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_128.sit\n', 'job_128', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(30, 2, NULL, 'Company 129', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_129.sit\n', 'job_129', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21'),
+(31, 2, NULL, 'Company 130', NULL, NULL, 'Web Developer', 'Paris, France', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Send your resume to lorem.ipsum [at] company_130.sit\n', 'job_130', 1, 1, 'job@example.com', '2024-07-08 23:19:21', '2024-06-08 23:19:21', '2024-06-08 23:19:21');
 
 --
 -- Índices para tablas volcadas
@@ -121,7 +151,7 @@ ALTER TABLE `jobeet_affiliate`
 --
 ALTER TABLE `jobeet_category`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
+  ADD UNIQUE KEY `jobeet_category_sluggable_idx` (`slug`);
 
 --
 -- Indices de la tabla `jobeet_category_affiliate`
@@ -158,7 +188,7 @@ ALTER TABLE `jobeet_category`
 -- AUTO_INCREMENT de la tabla `jobeet_job`
 --
 ALTER TABLE `jobeet_job`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Restricciones para tablas volcadas
