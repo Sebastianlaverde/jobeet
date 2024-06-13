@@ -44,7 +44,10 @@ public function executeCreate(sfWebRequest $request)
  
 public function executeEdit(sfWebRequest $request)
 {
-  $this->form = new JobeetJobForm($this->getRoute()->getObject());
+  $jobeet_job = $this->getRoute()->getObject();
+  $this->forward404If($jobeet_job->getIsActivated());
+ 
+  $this->form = new JobeetJobForm($jobeet_job);
 }
  
 public function executeUpdate(sfWebRequest $request)
@@ -62,6 +65,18 @@ public function executeDelete(sfWebRequest $request)
   $jobeet_job->delete();
  
   $this->redirect('job/index');
+}
+
+public function executeExtend(sfWebRequest $request)
+{
+  $request->checkCSRFProtection();
+ 
+  $jobeet_job = $this->getRoute()->getObject();
+  $this->forward404Unless($jobeet_job->extend());
+ 
+  $this->getUser()->setFlash('notice', sprintf('Your job validity has been extended until %s.', $jobeet_job->getDateTimeObject('expires_at')->format('m/d/Y')));
+ 
+  $this->redirect($this->generateUrl('job_show_user', $jobeet_job));
 }
  
 protected function processForm(sfWebRequest $request, sfForm $form)
