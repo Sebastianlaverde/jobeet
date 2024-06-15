@@ -1,6 +1,6 @@
 <?php
 
-class APP_NAME##Configuration extends sfApplicationConfiguration
+class backendConfiguration extends sfApplicationConfiguration
 {
   public function configure()
   {
