@@ -24,21 +24,21 @@
         </form>
       </nav>
  
-      <div id="menu">
-        <ul>
-          <li>
-            <?php echo link_to('Jobs', 'jobeet_job') ?>
-          </li>
-          <li>
-            <?php echo link_to('Categories', 'jobeet_category') ?>
-          </li>
-        </ul>
-      </div>
- 
-      <div id="content">
-        <?php echo $sf_content ?>
-      </div>
- 
+      <?php if ($sf_user->isAuthenticated()): ?>
+        <div id="menu">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><?php echo link_to('Jobs', 'jobeet_job') ?></li>
+            <li class="list-group-item"><?php echo link_to('Categories', 'jobeet_category') ?></li>
+            <li class="list-group-item"><?php echo link_to('Users', 'sf_guard_user') ?></li>
+            <li class="list-group-item"><?php echo link_to('Logout', 'sf_guard_signout') ?></li>
+          </ul>
+        </div>
+      <?php endif ?>
+        <div id="content">
+          <?php echo $sf_content ?>
+        </div>
+      
+
       <footer class="text-center text-white" style="background-color: #343a40;">
           <!-- Grid container -->
           <div class="container p-4 pb-0">

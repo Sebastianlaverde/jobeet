@@ -25,6 +25,8 @@ class jobActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
     $this->jobeet_job = $this->getRoute()->getObject();
+ 
+    $this->getUser()->addJobToHistory($this->jobeet_job);
   }
 
   public function executeNew(sfWebRequest $request)
