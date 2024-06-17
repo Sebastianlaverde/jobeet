@@ -4,6 +4,8 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+    <link rel="alternate" type="application/atom+xml" title="Latest Jobs"
+      href="<?php echo url_for('job', array('sf_format' => 'atom'), true) ?>" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_javascripts() ?>
     <?php include_stylesheets() ?>
@@ -64,14 +66,18 @@
         <footer class="text-center text-white" style="background-color: #343a40;">
           <!-- Grid container -->
           <div class="container p-4 pb-0">
+            
             <!-- Section: CTA -->
             <section class="">
               <p class="d-flex justify-content-center align-items-center">
-                <spa class="me-3">powered by </span>
+                <button data-mdb-ripple-init type="feed" class="btn btn-outline-light btn-rounded">
+                  <a href="<?php echo url_for('job', array('sf_format' => 'atom')) ?>">Full feed</a>
+                </button>
                 <button data-mdb-ripple-init type="button" class="btn btn-outline-light btn-rounded">
                   <a href="">About Jobeet</a>
                 </button>
               </p>
+              <spa class="me-3">powered by </span>
             </section>
             <!-- Section: CTA -->
           </div>

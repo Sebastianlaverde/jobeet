@@ -6,6 +6,10 @@
 <div class="category">
   <h1><?php echo $category ?></h1>
 </div>
+
+<div class="feed">
+  <a href="<?php echo url_for('category', array('sf_subject' => $category, 'sf_format' => 'atom')) ?>">Feed</a>
+</div>
  
 <?php include_partial('job/list', array('jobs' => $pager->getResults())) ?>
  

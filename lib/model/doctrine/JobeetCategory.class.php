@@ -13,6 +13,10 @@
  */
 class JobeetCategory extends BaseJobeetCategory
 {
+    public function getLatestPost()
+  {
+    return $this->getActiveJobs(1)->getFirst();
+  }
     public function getActiveJobs($max = 10)
     {
         $q = $this->getActiveJobsQuery()

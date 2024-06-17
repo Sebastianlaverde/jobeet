@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 /**
  * JobeetJobTable
@@ -7,6 +7,14 @@
  */
 class JobeetJobTable extends Doctrine_Table 
 { 
+  public function getLatestPost()
+  {
+    $q = Doctrine_Query::create()
+      ->from('JobeetJob j');
+    $this->addActiveJobsQuery($q);
+ 
+    return $q->fetchOne();
+  }
   static public $types = array(
     'full-time' => 'Full time',
     'part-time' => 'Part time',
