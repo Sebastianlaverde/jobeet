@@ -19,6 +19,7 @@
   <body>
     <div id="container">
       <nav class="navbar navbar-light bg-light">
+      
         <h1><a href="<?php echo url_for('@homepage') ?>">
             <img src="/legacy/images/logo.jpg" alt="Inicio" />
         </a></h1>

@@ -1,0 +1,15 @@
+# data/fixtures/affiliates.yml
+JobeetAffiliate:
+  sensio_labs:
+    url:       http://www.sensio-labs.com/
+    email:     slaverdeiesv@gmail.com
+    is_active: true
+    token:     sensio_labs
+    JobeetCategories: [programming]
+ 
+  symfony:
+    url:       /
+    email:     slaverdeiesv@gmail.org
+    is_active: false
+    token:     symfony
+    JobeetCategories: [design, programming]

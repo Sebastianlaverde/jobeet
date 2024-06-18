@@ -10,7 +10,7 @@
   </head>
   <body>
     <div id="container">
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-light bg-light ">
         <h1><a href="<?php echo url_for('@') ?>">
             <img src="/legacy/images/logo.jpg" alt="Inicio" />
         </a></h1>
