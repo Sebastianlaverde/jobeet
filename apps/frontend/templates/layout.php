@@ -27,10 +27,14 @@
         <div>
           <a href="<?php echo url_for('@job_new') ?>" class="btn btn-primary">Post a Job</a>
         </div>
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #007bff">Search</button>
-        </form>
+        <h2>Ask for a job</h2>
+          <form action="<?php echo url_for('job_search') ?>" method="get">
+            <input type="text" name="query" value="<?php echo $sf_request->getParameter('query') ?>" id="search_keywords" />
+            <input type="submit" value="search" />
+            <div class="help">
+              Enter some keywords (city, country, position, ...)
+            </div>
+          </form>
       </nav>
       
     <div id="job_history">
