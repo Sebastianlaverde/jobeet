@@ -3863,3 +3863,161 @@ Jun 18 19:53:51 symfony [err] {sfError404Exception} Action "api/list" does not e
 Jun 18 19:53:51 symfony [info] {sfPatternRouting} Match route "api_jobs" (/api/:token/jobs.:sf_format) for /api/sensio_labs/jobs.yaml with parameters array (  'module' => 'api',  'action' => 'list',  'token' => 'sensio_labs',  'sf_format' => 'yaml',)
 Jun 18 19:53:51 symfony [info] {sfFrontWebController} Action "api/list" does not exist
 Jun 18 19:53:51 symfony [err] {sfError404Exception} Action "api/list" does not exist.
+Jun 18 22:19:21 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM jobeet_category_affiliate - ()
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM jobeet_job - ()
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM jobeet_affiliate - ()
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM jobeet_category - ()
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (1, http://www.sensio-labs.com/, slaverdeiesv@gmail.com, sensio_labs, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (programming%)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Programming, 2024-06-18 22:19:21, 2024-06-18 22:19:21, programming)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (149, 7)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (0, /, slaverdeiesv@gmail.org, symfony, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (design%)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Design, 2024-06-18 22:19:21, 2024-06-18 22:19:21, design)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (150, 8)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (149, 8)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (manager%)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Manager, 2024-06-18 22:19:21, 2024-06-18 22:19:21, manager)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug LIKE ?) - (administrator%)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (name, created_at, updated_at, slug) VALUES (?, ?, ?, ?) - (Administrator, 2024-06-18 22:19:21, 2024-06-18 22:19:21, administrator)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 100, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_100.sit
+, job_100, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 101, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_101.sit
+, job_101, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 102, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_102.sit
+, job_102, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 103, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_103.sit
+, job_103, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 104, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_104.sit
+, job_104, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 105, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_105.sit
+, job_105, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 106, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_106.sit
+, job_106, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 107, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_107.sit
+, job_107, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 108, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_108.sit
+, job_108, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 109, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_109.sit
+, job_109, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 110, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_110.sit
+, job_110, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 111, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_111.sit
+, job_111, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 112, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_112.sit
+, job_112, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 113, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_113.sit
+, job_113, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 114, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_114.sit
+, job_114, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 115, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_115.sit
+, job_115, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 116, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_116.sit
+, job_116, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 117, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_117.sit
+, job_117, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 118, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_118.sit
+, job_118, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 119, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_119.sit
+, job_119, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 120, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_120.sit
+, job_120, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 121, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_121.sit
+, job_121, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 122, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_122.sit
+, job_122, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 123, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_123.sit
+, job_123, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 124, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_124.sit
+, job_124, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 125, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_125.sit
+, job_125, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 126, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_126.sit
+, job_126, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 127, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_127.sit
+, job_127, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 128, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_128.sit
+, job_128, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 129, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_129.sit
+, job_129, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 149, Company 130, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_130.sit
+, job_130, job@example.com, 2024-07-18 22:19:21, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {sfPatternRouting} Match route "affiliate_new" (/affiliate/new.:sf_format) for /affiliate/new with parameters array (  'module' => 'affiliate',  'action' => 'new',  'sf_format' => 'html',)
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 22:19:21 symfony [info] {affiliateActions} Call "affiliateActions->executeNew()"
+Jun 18 22:19:21 symfony [info] {sfPHPView} Render "C:\development\sfprojects\jobeet\apps\frontend\modules/affiliate/templates/newSuccess.php"
+Jun 18 22:19:21 symfony [info] {sfPartialView} Render "C:\development\sfprojects\jobeet\apps\frontend\modules/affiliate/templates/_form.php"
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Mysql} query : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j - ()
+Jun 18 22:19:21 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\jobeet\apps\frontend\templates/layout.php"
+Jun 18 22:19:21 symfony [info] {sfPHPView} Render "C:\development\sfprojects\jobeet\apps\frontend\templates/layout.php"
+Jun 18 22:19:21 symfony [info] {main} Get slot "title"
+Jun 18 22:19:21 symfony [info] {sfWebResponse} Send content (5862 o)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j WHERE (j.slug = ?) LIMIT 1 - (programming)
+Jun 18 22:19:21 symfony [info] {sfPatternRouting} Match route "affiliate_create" (/affiliate.:sf_format) for /affiliate with parameters array (  'module' => 'affiliate',  'action' => 'create',  'sf_format' => 'html',)
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 22:19:21 symfony [info] {affiliateActions} Call "affiliateActions->executeCreate()"
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT COUNT(*) AS num_results FROM jobeet_category j WHERE j.id IN (?) - (149)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.email = ?) - (foo@example.com)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j WHERE (j.id IN (?)) - (149)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (0, http://www.example.com/, foo@example.com, 1a51dd6d0ed0d30053f36e3c97f72d05347bbb65, 2024-06-18 22:19:21, 2024-06-18 22:19:21)
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (149, 9)
+Jun 18 22:19:21 symfony [info] {sfFrontWebController} Redirect to "/index.php/affiliate/9/wait"
+Jun 18 22:19:21 symfony [info] {sfWebResponse} Send content (98 o)
+Jun 18 22:19:21 symfony [info] {sfPatternRouting} Match route "affiliate_wait" (/affiliate/:id/wait.:sf_format) for /affiliate/9/wait with parameters array (  'module' => 'affiliate',  'action' => 'wait',  'sf_format' => 'html',  'id' => '9',)
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 22:19:21 symfony [info] {affiliateActions} Call "affiliateActions->executeWait()"
+Jun 18 22:19:21 symfony [info] {sfPHPView} Render "C:\development\sfprojects\jobeet\apps\frontend\modules/affiliate/templates/waitSuccess.php"
+Jun 18 22:19:21 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\jobeet\apps\frontend\templates/layout.php"
+Jun 18 22:19:21 symfony [info] {sfPHPView} Render "C:\development\sfprojects\jobeet\apps\frontend\templates/layout.php"
+Jun 18 22:19:21 symfony [info] {main} Get slot "title"
+Jun 18 22:19:21 symfony [info] {sfWebResponse} Send content (3443 o)
+Jun 18 22:19:21 symfony [info] {sfPatternRouting} Match route "affiliate_new" (/affiliate/new.:sf_format) for /affiliate/new with parameters array (  'module' => 'affiliate',  'action' => 'new',  'sf_format' => 'html',)
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 22:19:21 symfony [info] {affiliateActions} Call "affiliateActions->executeNew()"
+Jun 18 22:19:21 symfony [info] {sfPHPView} Render "C:\development\sfprojects\jobeet\apps\frontend\modules/affiliate/templates/newSuccess.php"
+Jun 18 22:19:21 symfony [info] {sfPartialView} Render "C:\development\sfprojects\jobeet\apps\frontend\modules/affiliate/templates/_form.php"
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Mysql} query : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j - ()
+Jun 18 22:19:21 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\jobeet\apps\frontend\templates/layout.php"
+Jun 18 22:19:21 symfony [info] {sfPHPView} Render "C:\development\sfprojects\jobeet\apps\frontend\templates/layout.php"
+Jun 18 22:19:21 symfony [info] {main} Get slot "title"
+Jun 18 22:19:21 symfony [info] {sfWebResponse} Send content (5862 o)
+Jun 18 22:19:21 symfony [info] {sfPatternRouting} Match route "affiliate_create" (/affiliate.:sf_format) for /affiliate with parameters array (  'module' => 'affiliate',  'action' => 'create',  'sf_format' => 'html',)
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 18 22:19:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 18 22:19:21 symfony [info] {affiliateActions} Call "affiliateActions->executeCreate()"
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.email = ?) - (foo@example.com)
+Jun 18 22:19:21 symfony [info] {affiliateActions} Change template to "CURRENT/new"
+Jun 18 22:19:21 symfony [info] {sfPHPView} Render "C:\development\sfprojects\jobeet\apps\frontend\modules/affiliate/templates/newSuccess.php"
+Jun 18 22:19:21 symfony [info] {sfPartialView} Render "C:\development\sfprojects\jobeet\apps\frontend\modules/affiliate/templates/_form.php"
+Jun 18 22:19:21 symfony [info] {Doctrine_Connection_Mysql} query : SELECT j.id AS j__id, j.name AS j__name, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j.slug AS j__slug FROM jobeet_category j - ()
+Jun 18 22:19:21 symfony [info] {sfPHPView} Decorate content with "C:\development\sfprojects\jobeet\apps\frontend\templates/layout.php"
+Jun 18 22:19:21 symfony [info] {sfPHPView} Render "C:\development\sfprojects\jobeet\apps\frontend\templates/layout.php"
+Jun 18 22:19:21 symfony [info] {main} Get slot "title"
+Jun 18 22:19:21 symfony [info] {sfWebResponse} Send content (6078 o)
+Jun 19 17:04:16 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 19 17:04:16 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 19 17:04:16 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM sf_guard_user - ()
+Jun 19 17:12:59 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 19 17:12:59 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 19 17:12:59 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM sf_guard_user - ()
+Jun 19 17:13:51 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 19 17:13:51 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 19 17:13:51 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM sf_guard_user - ()
+Jun 19 17:25:29 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 19 17:25:29 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 19 17:25:29 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM sf_guard_user - ()
+Jun 19 17:26:05 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 19 17:26:05 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 19 17:26:05 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM sf_guard_user - ()
+Jun 19 17:26:24 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 19 17:26:24 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 19 17:26:24 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM sf_guard_user - ()
+Jun 19 17:26:38 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 19 17:26:38 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 19 17:26:38 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM sf_guard_user - ()

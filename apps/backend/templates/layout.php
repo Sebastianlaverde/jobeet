@@ -11,13 +11,18 @@
   <body>
     <div id="container">
       <nav class="navbar navbar-light bg-light ">
-        <h1><a href="<?php echo url_for('@') ?>">
+        <h1><a href="<?php echo url_for('/') ?>">
             <img src="/legacy/images/logo.jpg" alt="Inicio" />
         </a></h1>
         <a class="navbar-brand" style="font-weight: 600;">Ask for a job</a>
         <div>
           <a href="<?php echo url_for('/') ?>" class="btn btn-primary">Post a Job</a>
         </div>
+        <li>
+      <a href="<?php echo url_for('jobeet_affiliate') ?>">
+        Affiliates = <strong><?php echo Doctrine_Core::getTable('JobeetAffiliate')->countToBeActivated() ?></strong>
+      </a>
+    </li>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #007bff">Search</button>

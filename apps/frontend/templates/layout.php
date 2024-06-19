@@ -71,6 +71,9 @@
             <!-- Section: CTA -->
             <section class="">
               <p class="d-flex justify-content-center align-items-center">
+                <li class="last">
+                  <a href="<?php echo url_for('affiliate_new') ?>">Become an affiliate</a>
+                </li>
                 <button data-mdb-ripple-init type="feed" class="btn btn-outline-light btn-rounded">
                   <a href="<?php echo url_for('job', array('sf_format' => 'atom')) ?>">Full feed</a>
                 </button>
