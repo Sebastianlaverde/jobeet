@@ -14,8 +14,8 @@ class jobActions extends sfActions
   {
     $this->forwardUnless($query = $request->getParameter('query'), 'job', 'index');
  
-    $this->jobs = Doctrine_Core::getTable('JobeetJob')->getForLuceneQuery($query);
-  
+  $this->jobs = Doctrine_Core::getTable('JobeetJob')->getForLuceneQuery($query);
+ 
     if ($request->isXmlHttpRequest())
     {
       if ('*' == $query || !$this->jobs)

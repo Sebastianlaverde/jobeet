@@ -24,7 +24,7 @@
         <h1><a href="<?php echo url_for('@homepage') ?>">
             <img src="/legacy/images/logo.jpg" alt="Inicio" />
         </a></h1>
-        <a class="navbar-brand" style="font-weight: 600;">Ask for a job</a>
+        <a class="navbar-brand" style="font-weight: 600;">JOBBET</a>
         <div>
           <a href="<?php echo url_for('@job_new') ?>" class="btn btn-primary">Post a Job</a>
         </div>
@@ -33,12 +33,12 @@
           <form action="<?php echo url_for('job_search') ?>" method="get">
             <input type="text" name="query" value="<?php echo $sf_request->getParameter('query') ?>" id="search_keywords" />
             <input type="submit" value="search" />
-            <img id="loader" src="/legacy/images/loader.gif" style="vertical-align: middle; display: none" />
+            <img id="loader" src="/images/load.gif" style="vertical-align: middle; display: none" />
             <div class="help">
               Enter some keywords (city, country, position, ...)
             </div>
           </form>
-      </div>
+        </div>
       </nav>
       
     <div id="job_history">
