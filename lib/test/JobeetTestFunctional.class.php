@@ -53,9 +53,11 @@ class JobeetTestFunctional extends sfTestFunctional
         ->select('j.*')
         ->from('JobeetJob j')
         ->leftJoin('j.JobeetCategory c')
-        ->where('c.slug = ?', 'programming');
+        ->leftJoin('c.Translation t')
+        ->where('t.slug = ?', 'programming');
+    
       $q = Doctrine_Core::getTable('JobeetJob')->addActiveJobsQuery($q);
-   
+    
       return $q->fetchOne();
     }
    

@@ -42,7 +42,8 @@
 <?php endif; ?>
  
 <div class="pagination_desc">
-  <strong><?php echo $pager->getNbResults() ?></strong> jobs in this category
+<strong><?php echo count($pager) ?></strong> jobs in this category
+  
  
   <?php if ($pager->haveToPaginate()): ?>
     - page <strong><?php echo $pager->getPage() ?>/<?php echo $pager->getLastPage() ?></strong>

@@ -7,7 +7,8 @@
     <link rel="alternate" type="application/atom+xml" title="Latest Jobs"
       href="<?php echo url_for('job', array('sf_format' => 'atom'), true) ?>" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <?php include_javascripts() ?>
+    <?php use_javascript('jquery-3.7.1.min.js') ?>
+    <?php use_javascript('search.js') ?>
     <?php include_stylesheets() ?>
     <title>
       <?php if (!include_slot('title')): ?>
@@ -27,14 +28,17 @@
         <div>
           <a href="<?php echo url_for('@job_new') ?>" class="btn btn-primary">Post a Job</a>
         </div>
-        <h2>Ask for a job</h2>
+        <div class="search">
+          <h2>Ask for a job</h2>
           <form action="<?php echo url_for('job_search') ?>" method="get">
             <input type="text" name="query" value="<?php echo $sf_request->getParameter('query') ?>" id="search_keywords" />
             <input type="submit" value="search" />
+            <img id="loader" src="/legacy/images/loader.gif" style="vertical-align: middle; display: none" />
             <div class="help">
               Enter some keywords (city, country, position, ...)
             </div>
           </form>
+      </div>
       </nav>
       
     <div id="job_history">
@@ -71,21 +75,24 @@
         <footer class="text-center text-white" style="background-color: #343a40;">
           <!-- Grid container -->
           <div class="container p-4 pb-0">
-            
+            <?php include_component('language', 'language') ?>
             <!-- Section: CTA -->
             <section class="">
               <p class="d-flex justify-content-center align-items-center">
                 <li class="last">
-                  <a href="<?php echo url_for('affiliate_new') ?>">Become an affiliate</a>
+                  <?php echo link_to(__('Become an affiliate'), 'affiliate_new') ?>
                 </li>
                 <button data-mdb-ripple-init type="feed" class="btn btn-outline-light btn-rounded">
-                  <a href="<?php echo url_for('job', array('sf_format' => 'atom')) ?>">Full feed</a>
+                  <?php echo link_to(__('Full feed'), 'job', array('sf_format' => 'atom')) ?>
                 </button>
                 <button data-mdb-ripple-init type="button" class="btn btn-outline-light btn-rounded">
-                  <a href="">About Jobeet</a>
+                  <a href=""><?php echo __('About Jobeet') ?></a>
                 </button>
               </p>
               <spa class="me-3">powered by </span>
+              <li>
+                <a href=""><?php echo __('Jobeet API') ?></a>
+              </li>
             </section>
             <!-- Section: CTA -->
           </div>
@@ -101,5 +108,6 @@
         <!-- Footer -->
       </section>
     </div>
+    <?php include_javascripts() ?>
   </body>
 </html>
