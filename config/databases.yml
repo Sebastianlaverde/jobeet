@@ -5,9 +5,9 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=localhost;dbname=prod_dbname'
-      username: sebastian
-      password: '123'
+      dsn: 'mysql:host=localhost;dbname=jobeet'
+      username: root
+      password: null
 test:
   doctrine:
     class: sfDoctrineDatabase

@@ -3,10 +3,11 @@
 
 prod:
   logger:
-    class:   sfNoLogger
+    class:   sfFileLogger
     param:
       level:   err
       loggers: ~
+      file:    %SF_LOG_DIR%/%SF_APP%_%SF_ENVIRONMENT%.log
 
 test:
   storage:
@@ -34,6 +35,19 @@ all:
     param:
       generate_shortest_url:            true
       extra_parameters_as_query_string: true
+    storage:
+      class: sfSessionStorage
+      param:
+        session_name: jobeet
+        db_table:     session
+        database:     propel
+        db_id_col:    id
+        db_data_col:  data
+        db_time_col:  time
+      user:
+        class: myUser
+        param:
+          timeout: 1800
 
   view_cache_manager:
     class: sfViewCacheManager
