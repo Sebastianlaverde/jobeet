@@ -54,7 +54,7 @@ class JobeetJob extends BaseJobeetJob
     $this->setToken(sha1($this->getEmail().rand(11111, 99999)));
   }
  
-  $conn = $conn ? $conn : JobeetJobTable::getConnection();
+  $conn = $conn ? $conn : $this->getTable()->getConnection();
   $conn->beginTransaction();
   try
   {

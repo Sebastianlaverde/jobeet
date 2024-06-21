@@ -30,8 +30,11 @@ cache:
 
 all:
   .settings:
+
     i18n: true
+
     charset: utf-8
+
     default_culture: it_IT
     # Form security secret (CSRF protection)
     csrf_secret:  Unique$ecret            

@@ -27,25 +27,25 @@ class jobActions extends sfActions
     }
   }
   public function executeIndex(sfWebRequest $request)
-{
-  if (!$request->getParameter('sf_culture'))
   {
-    if ($this->getUser()->isFirstRequest())
+    if (!$request->getParameter('sf_culture'))
     {
-      $culture = $request->getPreferredCulture(array('en', 'fr'));
-      $this->getUser()->setCulture($culture);
-      $this->getUser()->isFirstRequest(false);
+      if ($this->getUser()->isFirstRequest())
+      {
+        $culture = $request->getPreferredCulture(array('en', 'fr'));
+        $this->getUser()->setCulture($culture);
+        $this->getUser()->isFirstRequest(false);
+      }
+      else
+      {
+        $culture = $this->getUser()->getCulture();
+      }
+  
+      $this->redirect('localized_homepage');
     }
-    else
-    {
-      $culture = $this->getUser()->getCulture();
-    }
- 
-    $this->redirect('localized_homepage');
+  
+    $this->categories = Doctrine_Core::getTable('JobeetCategory')->getWithJobs();
   }
- 
-  $this->categories = Doctrine_Core::getTable('JobeetCategory')->getWithJobs();
-}
 
   public function executeFooBar(sfWebRequest $request)
 {
