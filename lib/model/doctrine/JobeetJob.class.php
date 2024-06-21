@@ -54,29 +54,29 @@ class JobeetJob extends BaseJobeetJob
     $this->setToken(sha1($this->getEmail().rand(11111, 99999)));
   }
  
-    $conn = $conn ? $conn : $this->getTable()->getConnection();
-    $conn->beginTransaction();
-    try
-    {
-      $ret = parent::save($conn);
-  
-      $this->updateLuceneIndex();
-  
-      $conn->commit();
-  
-      return $ret;
-    }
-    catch (Exception $e)
-    {
-      $conn->rollBack();
-      throw $e;
-    }
+  $conn = $conn ? $conn : JobeetJobTable::getConnection();
+  $conn->beginTransaction();
+  try
+  {
+    $ret = parent::save($conn);
+ 
+    $this->updateLuceneIndex();
+ 
+    $conn->commit();
+ 
+    return $ret;
+  }
+  catch (Exception $e)
+  {
+    $conn->rollBack();
+    throw $e;
+  }
   }
 
     public function delete(Doctrine_Connection $conn = null)
   {
-    $index = $this->getTable()->getLuceneIndex();
-  
+    $index = JobeetJobTable::getLuceneIndex();
+ 
     if ($hit = $index->find('pk:'.$this->getId()))
     {
       $index->delete($hit->id);
@@ -132,35 +132,35 @@ class JobeetJob extends BaseJobeetJob
   }
 
   public function updateLuceneIndex()
-{
-  $index = $this->getTable()->getLuceneIndex();
- 
-  // remove an existing entry
-  if ($hit = $index->find('pk:'.$this->getId()))
   {
-    $index->delete($hit->id);
+    $index = JobeetJobTable::getLuceneIndex();
+  
+    // remove an existing entry
+    if ($hit = $index->find('pk:'.$this->getId()))
+    {
+      $index->delete($hit->id);
+    }
+  
+    // don't index expired and non-activated jobs
+    if ($this->isExpired() || !$this->getIsActivated())
+    {
+      return;
+    }
+  
+    $doc = new Zend_Search_Lucene_Document();
+  
+    // store job primary key URL to identify it in the search results
+    $doc->addField(Zend_Search_Lucene_Field::UnIndexed('pk', $this->getId()));
+  
+    // index job fields
+    $doc->addField(Zend_Search_Lucene_Field::UnStored('position', $this->getPosition(), 'utf-8'));
+    $doc->addField(Zend_Search_Lucene_Field::UnStored('company', $this->getCompany(), 'utf-8'));
+    $doc->addField(Zend_Search_Lucene_Field::UnStored('location', $this->getLocation(), 'utf-8'));
+    $doc->addField(Zend_Search_Lucene_Field::UnStored('description', $this->getDescription(), 'utf-8'));
+  
+    // add job to the index
+    $index->addDocument($doc);
+    $index->commit();
   }
- 
-  // don't index expired and non-activated jobs
-  if ($this->isExpired() || !$this->getIsActivated())
-  {
-    return;
-  }
- 
-  $doc = new Zend_Search_Lucene_Document();
- 
-  // store job primary key URL to identify it in the search results
-  $doc->addField(Zend_Search_Lucene_Field::UnIndexed('pk', $this->getId()));
- 
-  // index job fields
-  $doc->addField(Zend_Search_Lucene_Field::UnStored('position', $this->getPosition(), 'utf-8'));
-  $doc->addField(Zend_Search_Lucene_Field::UnStored('company', $this->getCompany(), 'utf-8'));
-  $doc->addField(Zend_Search_Lucene_Field::UnStored('location', $this->getLocation(), 'utf-8'));
-  $doc->addField(Zend_Search_Lucene_Field::UnStored('description', $this->getDescription(), 'utf-8'));
- 
-  // add job to the index
-  $index->addDocument($doc);
-  $index->commit();
-}
     
 }

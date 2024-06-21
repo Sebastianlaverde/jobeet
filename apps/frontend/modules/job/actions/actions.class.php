@@ -14,15 +14,15 @@ class jobActions extends sfActions
   {
     $this->forwardUnless($query = $request->getParameter('query'), 'job', 'index');
  
-  $this->jobs = Doctrine_Core::getTable('JobeetJob')->getForLuceneQuery($query);
- 
+    $this->jobs = Doctrine_Core::getTable('JobeetJob')->getForLuceneQuery($query);
+   
     if ($request->isXmlHttpRequest())
     {
       if ('*' == $query || !$this->jobs)
       {
         return $this->renderText('No results.');
       }
-  
+   
       return $this->renderPartial('job/list', array('jobs' => $this->jobs));
     }
   }
@@ -132,11 +132,17 @@ protected function processForm(sfWebRequest $request, sfForm $form)
   {
     $request->checkCSRFProtection();
   
-    $jobeet_job = $this->getRoute()->getObject();
-    $jobeet_job->publish();
+    $job = $this->getRoute()->getObject();
+    $job->publish();
+ 
+    if ($cache = $this->getContext()->getViewCacheManager())
+    {
+      $cache->remove('sfJobeetJob/index?sf_culture=*');
+      $cache->remove('sfJobeetCategory/show?id='.$job->getJobeetCategory()->getId());
+    }
   
     $this->getUser()->setFlash('notice', sprintf('Your job is now online for %s days.', sfConfig::get('app_active_days')));
   
-    $this->redirect($this->generateUrl('job_show_user', $jobeet_job));
+    $this->redirect($this->generateUrl('job_show_user', $job));
   }
 }

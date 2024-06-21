@@ -17,10 +17,8 @@ class languageActions extends sfActions
 
   public function executeChangeLanguage(sfWebRequest $request)
   {
-    $form = new sfFormLanguage(
-      $this->getUser(),
-      array('languages' => array('en', 'fr'))
-    );
+    $form = new sfFormLanguage($this->getUser(), array('languages' => array('en', 'fr')));
+    $form->disableLocalCSRFProtection();
  
     $form->process($request);
  

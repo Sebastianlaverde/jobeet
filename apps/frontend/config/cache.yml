@@ -4,4 +4,13 @@
 default:
   enabled:     false
   with_layout: false
-  lifetime:    86400
+  lifetime:    600
+
+new:
+  enabled:     true
+ 
+index:
+  enabled:     true
+ 
+all:
+  with_layout: false

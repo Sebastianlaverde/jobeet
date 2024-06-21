@@ -13,6 +13,8 @@ class JobeetJobForm extends BaseJobeetJobForm
   public function configure()
   {
 
+    $this->disableLocalCSRFProtection();
+
     $this->removeFields();
  
     $this->validatorSchema['email'] = new sfValidatorAnd(array(

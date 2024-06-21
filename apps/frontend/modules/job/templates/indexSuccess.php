@@ -12,7 +12,7 @@
         <h1><?php echo $category ?></h1>
       </div>
       <?php include_partial('job/list', array('jobs' => $category->getActiveJobs(sfConfig::get('app_max_jobs_on_homepage')))) ?>
-      </>
+      
       <?php if (($count = $category->countActiveJobs() -
           sfConfig::get('app_max_jobs_on_homepage')) > 0): ?>
         <div class="more_jobs">
